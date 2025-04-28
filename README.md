@@ -1,5 +1,5 @@
 ![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/HaloKittyAdventures.png)
-# Kitty – MVC Starter Kit 🐱⚔️  
+#  MVC Starter Kit  
 *“Because every **Hello World** deserves Major-grade armor.”*
 
 **Kitty** is a playful, production-minded boilerplate for **ASP.NET Core 8 MVC** web-apps.  
