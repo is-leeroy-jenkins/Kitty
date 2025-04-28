@@ -6,7 +6,7 @@
 Inspired by an imaginary crossover where **Hello Kitty** suits up as **Master Chief**, Kitty fuses the cuteness of fast scaffolding with the fire-power of enterprise-grade architecture—so you can obliterate boilerplate and conquer feature work.
 
 <div align="center">
-  <img src="https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/HaloKittyIcon_128px.png" width="450" alt="Kitty – Hello Kitty x Master Chief fan-art">
+  <img src="https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/HaloKittyIcon_128px.png" width="150" alt="Kitty – Hello Kitty x Master Chief fan-art">
   <br/>
   <sup>Halo and Hello Kitty are © Microsoft &amp <br/>No affiliation or endorsement implied.</sup>
 </div>
