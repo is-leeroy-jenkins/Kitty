@@ -38,7 +38,7 @@ Inspired by an imaginary crossover where **Hello Kitty** suits up as **Master Ch
 * **Opinionated but untethered** – follow conventions out-of-box, yet every dependency is swappable.  
 * **MVC-first** – built for server-rendered apps that still need sprinkles of JS for snappy UX.  
 * **Full-stack in one repo** – controllers, views, APIs, background workers & infra configs co-located.  
-* **Ready to demo, ready for prod** – HTTPS, security headers, logging, migrations, compose file—all pre-wired.  
+* **Ready to demo, ready for prod** – HTTPS, security headers, logging, and migrations.
 
 ---
 
@@ -50,16 +50,16 @@ Inspired by an imaginary crossover where **Hello Kitty** suits up as **Master Ch
 |----------------|---------|--------------------------------------|
 | .NET SDK       | **8.0.x** | <https://dotnet.microsoft.com/download> |
 | Node.js        | ≥ 18    | For Sass & ESBuild                   |
-| Docker         | ≥ 24    | (optional) containerised dev         |
+| Docker         | ≥ 24    | (optional) containers        |
 
 
 ### ![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/install.png) Installation
 
 ```bash
-dotnet new install Kitty.Template      # 1st time only
-dotnet new kitty -n Acme.Web
-cd Acme.Web
-dotnet watch                           # Live reload incl. Sass & ESBuild
+dotnet new install Kitty       # 1st time only
+dotnet new kitty -n Kitty
+cd Kitty
+dotnet watch                    # Live reload incl. Sass & ESBuild
 ```
 
 ### ![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/csharp.png) Code
@@ -71,6 +71,8 @@ dotnet watch                           # Live reload incl. Sass & ESBuild
 - [Static]() - static types used in the analysis of environmental budget data.
 - [Abstractions]() - interfaces and base-classes used in the analysis of environmental budget data.
 - [Views](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Views) - UI layer for Kitty
+
+___
 
 ### ![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/icons8-layers-30.png) Directory Structure
 ```/
@@ -97,6 +99,7 @@ Serilog sinks & levels | appsettings.Production.json | Logging targets inc. OTLP
 Feature flags | appsettings.json | Toggle optional modules
 
 
+___ 
 
 ### 🛠️ Commands
 Command | Description
@@ -119,3 +122,5 @@ npm run lint | ESLint & Stylelint (optional)
 - Fork → feature branch → lint+tests green → PR w/ description.
 - Follow .editorconfig (StyleCop-analyzers enabled).
 - Sign your commits (git commit -s).
+
+___
