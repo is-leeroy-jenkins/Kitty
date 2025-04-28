@@ -61,8 +61,17 @@ cd Acme.Web
 dotnet watch                           # Live reload incl. Sass & ESBuild
 ```
 
+### ![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/csharp.png) Code
+[Controller](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Controllers) - main UI layer with numerous controls and related functionality.
+[Models](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Models) - XAML-based styles for the Badger UI layer.
+Enumerations - various enumerations used by Kitty.
+Extensions- useful extension methods for budget analysis by type.
+IO - input output classes used for networking and the file systemm.
+Static - static types used in the analysis of environmental budget data.
+Interfaces - abstractions used in the analysis of environmental budget data.
+[Views](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Views) - UI layer for Kitty
 
-### Acme.Web
+### ![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/icons8-layers-30.png) Directory Structure
 ```/
 ├─ src/
 │  ├─ Acme.Web/            # MVC web-app: Controllers, Views, Areas, TagHelpers
