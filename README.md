@@ -89,6 +89,8 @@ ___
    └─ helm/                # Kubernetes chart
 ```
 
+___
+
 ### ⚙️ Configuration Matrix
  Setting | File / Provider | Purpose
 --------- | --------- | ---------
@@ -116,6 +118,7 @@ npm run lint | ESLint & Stylelint (optional)
 - Blazor-based admin area
 - Redis cache / session provider option
 - gRPC service stub
+___
 
 ### 🐛 Contributing
 #### PRs welcome!
