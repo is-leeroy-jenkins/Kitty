@@ -1,14 +1,14 @@
 ﻿// ******************************************************************************************
-//     Assembly:                Kitty
+//     Assembly:                Bocifus
 //     Author:                  Terry D. Eppler
-//     Created:                 01-07-2025
+//     Created:                 10-31-2024
 // 
 //     Last Modified By:        Terry D. Eppler
-//     Last Modified On:        01-07-2025
+//     Last Modified On:        10-31-2024
 // ******************************************************************************************
-// <copyright file="EmailBase.cs" company="Terry D. Eppler">
-//    Kitty is a small and simple windows (wpf) application for interacting with the OpenAI API
-//    that's developed in C-Sharp under the MIT license.C#.
+// <copyright file="QueueExtensions.cs" company="Terry D. Eppler">
+//   Bocifus is an open source windows (wpf) application that interacts with OpenAI GPT-3.5 Turbo API
+//   based on NET6 and written in C-Sharp.
 // 
 //    Copyright ©  2020-2024 Terry D. Eppler
 // 
@@ -35,7 +35,7 @@
 //    You can contact me at:  terryeppler@gmail.com or eppler.terry@epa.gov
 // </copyright>
 // <summary>
-//   EmailBase.cs
+//   QueueExtensions.cs
 // </summary>
 // ******************************************************************************************
 
@@ -44,56 +44,22 @@ namespace Kitty
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using System.Net.Mail;
 
     /// <summary>
     /// 
     /// </summary>
-    [ SuppressMessage( "ReSharper", "InconsistentNaming" ) ]
-    public abstract class EmailBase
+    [ SuppressMessage( "ReSharper", "UnusedType.Global" ) ]
+    public static class QueueExtensions
     {
         /// <summary>
-        /// The carbon copy
+        /// Adds the specified item.
         /// </summary>
-        private protected IList<string> _copies;
-
-        /// <summary>
-        /// The display name
-        /// </summary>
-        private protected string _displayName;
-
-        /// <summary>
-        /// The host
-        /// </summary>
-        private protected string _hostName;
-
-        /// <summary>
-        /// The priority
-        /// </summary>
-        private protected MailPriority _priority;
-
-        /// <summary>
-        /// The receiver
-        /// </summary>
-        private protected string _receiver;
-
-        /// <summary>
-        /// The recipient
-        /// </summary>
-        private protected IList<string> _recipients;
-
-        /// <summary>
-        /// The sender
-        /// </summary>
-        private protected string _sender;
-
-        /// <summary>
-        /// Fails the specified _ex.
-        /// </summary>
-        /// <param name="_ex">The _ex.</param>
-        private protected void Fail( Exception _ex )
-        {
-            var _error = Console.Error;
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queue">The queue.</param>
+        /// <param name="item">The item.</param>
+        public static void Add<T>( this Queue<T> queue, T item )
+        { 
+            queue.Enqueue( item );
         }
     }
 }

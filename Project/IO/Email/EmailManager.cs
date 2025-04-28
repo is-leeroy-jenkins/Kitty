@@ -141,9 +141,7 @@ namespace Kitty
         /// <param name="ex">The ex.</param>
         private protected void Fail( Exception ex )
         {
-            var _error = new ErrorWindow( ex );
-            _error?.SetText( );
-            _error?.ShowDialog( );
+            var _error = Console.Error;
         }
     }
 }

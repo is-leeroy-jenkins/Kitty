@@ -1,16 +1,17 @@
 ﻿// ******************************************************************************************
-//     Assembly:                Kitty
+//     Assembly:                Baby
 //     Author:                  Terry D. Eppler
-//     Created:                 01-07-2025
+//     Created:                 09-09-2024
 // 
 //     Last Modified By:        Terry D. Eppler
-//     Last Modified On:        01-07-2025
+//     Last Modified On:        09-09-2024
 // ******************************************************************************************
-// <copyright file="EmailBase.cs" company="Terry D. Eppler">
-//    Kitty is a small and simple windows (wpf) application for interacting with the OpenAI API
-//    that's developed in C-Sharp under the MIT license.C#.
+// <copyright file="IconNotFoundException.cs" company="Terry D. Eppler">
+//     Baby is a light-weight, full-featured, web-browser built with .NET 6 and is written
+//     in C#.  The baby browser is designed for budget execution and data analysis.
+//     A tool for EPA analysts and a component that can be used for general browsing.
 // 
-//    Copyright ©  2020-2024 Terry D. Eppler
+//     Copyright ©  2020 Terry D. Eppler
 // 
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the “Software”),
@@ -35,65 +36,34 @@
 //    You can contact me at:  terryeppler@gmail.com or eppler.terry@epa.gov
 // </copyright>
 // <summary>
-//   EmailBase.cs
+//   IconNotFoundException.cs
 // </summary>
 // ******************************************************************************************
 
 namespace Kitty
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using System.Net.Mail;
 
+    /// <inheritdoc />
     /// <summary>
-    /// 
     /// </summary>
-    [ SuppressMessage( "ReSharper", "InconsistentNaming" ) ]
-    public abstract class EmailBase
+    /// <seealso cref="T:System.Exception" />
+    [ SuppressMessage( "ReSharper", "ClassCanBeSealed.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
+    public class IconNotFoundException : Exception
     {
+        /// <inheritdoc />
         /// <summary>
-        /// The carbon copy
+        /// Initializes a new instance of the
+        /// <see cref="T:IconUtils.IconNotFoundException" /> class.
         /// </summary>
-        private protected IList<string> _copies;
-
-        /// <summary>
-        /// The display name
-        /// </summary>
-        private protected string _displayName;
-
-        /// <summary>
-        /// The host
-        /// </summary>
-        private protected string _hostName;
-
-        /// <summary>
-        /// The priority
-        /// </summary>
-        private protected MailPriority _priority;
-
-        /// <summary>
-        /// The receiver
-        /// </summary>
-        private protected string _receiver;
-
-        /// <summary>
-        /// The recipient
-        /// </summary>
-        private protected IList<string> _recipients;
-
-        /// <summary>
-        /// The sender
-        /// </summary>
-        private protected string _sender;
-
-        /// <summary>
-        /// Fails the specified _ex.
-        /// </summary>
-        /// <param name="_ex">The _ex.</param>
-        private protected void Fail( Exception _ex )
+        /// <param name="fileName">Name of the file.</param>
+        /// <param name="index">The index.</param>
+        public IconNotFoundException( string fileName, int index )
+            : base( string.Format( "Icon with Id = {0} wasn't found in file {1}", index,
+                fileName ) )
         {
-            var _error = Console.Error;
         }
     }
 }

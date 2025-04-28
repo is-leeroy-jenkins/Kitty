@@ -52,8 +52,7 @@ namespace Kitty
     using System.Data.OleDb;
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
-    using Color = System.Drawing.Color;
-    using Font = System.Drawing.Font;
+    using System.Drawing;
 
     /// <inheritdoc />
     /// <summary>
@@ -173,11 +172,6 @@ namespace Kitty
         private protected string _filePath;
 
         /// <summary>
-        /// The font
-        /// </summary>
-        private protected Font _font;
-
-        /// <summary>
         /// The font color
         /// </summary>
         private protected Color _fontColor;
@@ -276,11 +270,6 @@ namespace Kitty
         /// The theme path
         /// </summary>
         private protected string _themePath;
-
-        /// <summary>
-        /// The title font
-        /// </summary>
-        private protected Font _titleFont;
 
         /// <summary>
         /// The top margin
@@ -430,9 +419,7 @@ namespace Kitty
         private void Dispose( bool disposing )
         {
             try
-            {
-                _font?.Dispose( );
-                _titleFont?.Dispose( );
+            { 
                 _dataConnection?.Dispose( );
                 _dataCommand?.Dispose( );
                 _dataAdapter?.Dispose( );
@@ -476,9 +463,7 @@ namespace Kitty
         /// <param name="ex">The ex.</param>
         private protected void Fail( Exception ex )
         {
-            var _error = new ErrorWindow( ex );
-            _error?.SetText( );
-            _error?.ShowDialog( );
+            var _error = Console.Error;
         }
     }
 }

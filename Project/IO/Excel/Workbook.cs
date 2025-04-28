@@ -88,42 +88,6 @@ namespace Kitty
             }
         }
 
-        /// <summary>
-        /// Gets or sets the font.
-        /// </summary>
-        /// <value>
-        /// The font.
-        /// </value>
-        public Font Font
-        {
-            get
-            {
-                return _font;
-            }
-            set
-            {
-                _font = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the title font.
-        /// </summary>
-        /// <value>
-        /// The title font.
-        /// </value>
-        public Font TitleFont
-        {
-            get
-            {
-                return TitleFont;
-            }
-            set
-            {
-                TitleFont = value;
-            }
-        }
-        
         /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance of the

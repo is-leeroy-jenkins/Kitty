@@ -53,7 +53,6 @@ namespace Kitty
     using System.Net.Mail;
     using System.Text.Json;
     using System.Windows;
-    using System.Windows.Controls;
     using System.Xml.Linq;
     using Microsoft.ML;
 
@@ -90,16 +89,6 @@ namespace Kitty
                 case Action _action:
                 {
                     if( _action == null )
-                    {
-                        var _message = @$"The '{paramName}' is null!";
-                        throw new ArgumentNullException( _message );
-                    }
-
-                    break;
-                }
-                case Window _window:
-                {
-                    if( _window == null )
                     {
                         var _message = @$"The '{paramName}' is null!";
                         throw new ArgumentNullException( _message );

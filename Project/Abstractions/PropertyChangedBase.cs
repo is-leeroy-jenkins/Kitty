@@ -1,5 +1,5 @@
 ﻿// ******************************************************************************************
-//     Assembly:                Bubba
+//     Assembly:                Kitty
 //     Author:                  Terry D. Eppler
 //     Created:                 01-07-2025
 // 
@@ -7,7 +7,7 @@
 //     Last Modified On:        01-07-2025
 // ******************************************************************************************
 // <copyright file="PropertyChangedBase.cs" company="Terry D. Eppler">
-//    Bubba is a small and simple windows (wpf) application for interacting with the OpenAI API
+//    Kitty is a small and simple windows (wpf) application for interacting with the OpenAI API
 //    that's developed in C-Sharp under the MIT license.C#.
 // 
 //    Copyright ©  2020-2024 Terry D. Eppler
@@ -39,7 +39,7 @@
 // </summary>
 // ******************************************************************************************
 
-namespace Bubba
+namespace Kitty
 {
     using System.ComponentModel;
     using System.Diagnostics.CodeAnalysis;

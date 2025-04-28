@@ -1,14 +1,14 @@
 ﻿// ******************************************************************************************
-//     Assembly:                Kitty
+//     Assembly:                Bocifus
 //     Author:                  Terry D. Eppler
-//     Created:                 01-16-2025
+//     Created:                 10-31-2024
 // 
 //     Last Modified By:        Terry D. Eppler
-//     Last Modified On:        01-16-2025
+//     Last Modified On:        10-31-2024
 // ******************************************************************************************
-// <copyright file="XmlUtility.cs" company="Terry D. Eppler">
-//    Kitty is a small and simple windows (wpf) application for interacting with the OpenAI API
-//    that's developed in C-Sharp under the MIT license.C#.
+// <copyright file="TypeExtensions.cs" company="Terry D. Eppler">
+//   Bocifus is an open source windows (wpf) application that interacts with OpenAI GPT-3.5 Turbo API
+//   based on NET6 and written in C-Sharp.
 // 
 //    Copyright ©  2020-2024 Terry D. Eppler
 // 
@@ -35,106 +35,76 @@
 //    You can contact me at:  terryeppler@gmail.com or eppler.terry@epa.gov
 // </copyright>
 // <summary>
-//   XmlUtility.cs
+//   TypeExtensions.cs
 // </summary>
 // ******************************************************************************************
 
 namespace Kitty
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
-    using System.Xml.Linq;
+    using System.Runtime.Serialization.Json;
+    using System.Text;
     using System.Xml.Serialization;
 
     /// <summary>
     /// 
     /// </summary>
+    [ SuppressMessage( "ReSharper", "CompareNonConstrainedGenericWithNull" ) ]
     [ SuppressMessage( "ReSharper", "UnusedType.Global" ) ]
-    [ SuppressMessage( "ReSharper", "PreferConcreteValueOverDefault" ) ]
     [ SuppressMessage( "ReSharper", "InconsistentNaming" ) ]
-    public static class XmlUtility
+    public static class TypeExtensions
     {
         /// <summary>
-        /// Creates the element.
+        /// Javas the script serialize.
         /// </summary>
-        /// <param name="name">The name.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="attributes">The attributes.</param>
-        /// <param name="namespaceUri">The namespace URI.</param>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="type">The type.</param>
         /// <returns></returns>
-        public static XElement CreateElement( string name, string value = null,
-            Dictionary<string, string> attributes = null, string namespaceUri = null )
+        public static string SerializeToJavaScript<T>( this T type )
         {
             try
             {
-                var _element = string.IsNullOrEmpty( namespaceUri )
-                    ? new XElement( name )
-                    : new XElement( XName.Get( name, namespaceUri ) );
-
-                if( value != null )
-                {
-                    _element.Value = value;
-                }
-
-                if( attributes != null )
-                {
-                    foreach( var _attribute in attributes )
-                    {
-                        _element.SetAttributeValue( _attribute.Key, _attribute.Value );
-                    }
-                }
-
-                return _element;
+                var _encoding = Encoding.Default;
+                var _serializer = new DataContractJsonSerializer( typeof( T ) );
+                using var _stream = new MemoryStream( );
+                _serializer.WriteObject( _stream, type );
+                var _json = _encoding.GetString( _stream.ToArray( ) );
+                return !string.IsNullOrEmpty( _json )
+                    ? _json
+                    : string.Empty;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( XElement );
+                return default( string );
             }
         }
 
         /// <summary>
-        /// Serializes to XML.
+        /// XMLs serialize.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="obj">The object.</param>
-        /// <returns></returns>
-        public static string SerializeToXml<T>( T obj )
+        /// <param name="type">The type.</param>
+        /// <returns>
+        /// string
+        /// </returns>
+        public static string SerializeToXml<T>( this T type )
         {
             try
             {
-                var _serializer = new XmlSerializer( typeof( T ) );
+                var _serializer = new XmlSerializer( type.GetType( ) );
                 using var _writer = new StringWriter( );
-                _serializer.Serialize( _writer, obj );
-                return _writer.ToString( );
+                _serializer?.Serialize( _writer, type );
+                var _string = _writer?.GetStringBuilder( )?.ToString( );
+                using var _reader = new StringReader( _string );
+                return _reader?.ReadToEnd( ) ?? string.Empty;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return string.Empty;
-            }
-        }
-
-        /// <summary>
-        /// Deserializes from XML.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="xml">The XML.</param>
-        /// <returns></returns>
-        public static T DeserializeFromXml<T>( string xml )
-        {
-            try
-            {
-                var _serializer = new XmlSerializer( typeof( T ) );
-                using var _reader = new StringReader( xml );
-                return ( T )_serializer.Deserialize( _reader );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( T );
+                return default( string );
             }
         }
 

@@ -315,16 +315,7 @@ namespace Kitty
         {
             try
             {
-                var _dialog = new OpenFileDialog
-                {
-                    CheckFileExists = true,
-                    CheckPathExists = true
-                };
-
-                _dialog.ShowDialog( );
-                return !string.IsNullOrEmpty( _dialog.FileName )
-                    ? _dialog.FileName
-                    : string.Empty;
+                return string.Empty;
             }
             catch( Exception ex )
             {
@@ -343,16 +334,6 @@ namespace Kitty
             FileStream _stream = null;
             try
             {
-                var _dialog = new SaveFileDialog
-                {
-                    CreatePrompt = true,
-                    OverwritePrompt = true,
-                    CheckFileExists = true,
-                    CheckPathExists = true
-                };
-
-                _dialog.ShowDialog( );
-                _stream = File.Create( _dialog.FileName );
                 _stream.Close( );
             }
             catch( Exception ex )

@@ -41,7 +41,6 @@
 
 namespace Kitty
 {
-    using Microsoft.Win32;
     using OfficeOpenXml;
     using OfficeOpenXml.Style;
     using System;
@@ -79,8 +78,6 @@ namespace Kitty
             _startRow = 2;
             _startColumn = 1;
             _fontColor = Color.Black;
-            _font = new Font( "Segoe UI", 8, FontStyle.Regular );
-            TitleFont = new Font( "Segoe UI", 9 );
             _fileName = "Budget.xlsx";
             _rowHeight = 0.27d;
             _columnWidth = 0.69d;
@@ -125,8 +122,6 @@ namespace Kitty
             _startRow = 2;
             _startColumn = 1;
             _fontColor = Color.Black;
-            _font = new Font( "Segoe UI", 8, FontStyle.Regular );
-            TitleFont = new Font( "Segoe UI", 9 );
             _rowHeight = 0.27d;
             _columnWidth = 0.69d;
             _leftMargin = .25m;
@@ -172,8 +167,6 @@ namespace Kitty
             _startRow = 2;
             _startColumn = 1;
             _fontColor = Color.Black;
-            _font = new Font( "Segoe UI", 8, FontStyle.Regular );
-            _titleFont = new Font( "Segoe UI", 9, FontStyle.Regular );
             _rowHeight = 0.27d;
             _columnWidth = 0.69d;
             _leftMargin = .25m;
@@ -398,10 +391,6 @@ namespace Kitty
         {
             try
             {
-                var _browser = new SaveFileDialog( );
-                _browser.ShowDialog( );
-                _savePath = _browser.FileName + @"\" + _dataTable.TableName + ".xlsx";
-                _excelPackage.SaveAs( _savePath );
             }
             catch( Exception ex )
             {

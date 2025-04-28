@@ -202,17 +202,6 @@ namespace Kitty
         }
 
         /// <summary>
-        /// Fails the specified ex.
-        /// </summary>
-        /// <param name="ex">The ex.</param>
-        private protected void Fail( Exception ex )
-        {
-            var _error = new ErrorWindow( ex );
-            _error?.SetText( );
-            _error?.ShowDialog( );
-        }
-
-        /// <summary>
         /// Initializes a new instance of the
         /// <see cref="ExcelGrid"/> class.
         /// </summary>
@@ -444,6 +433,15 @@ namespace Kitty
             {
                 _cells = value;
             }
+        }
+
+        /// <summary>
+        /// Fails the specified ex.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
+        private protected void Fail( Exception ex )
+        {
+            var _error = Console.Error;
         }
     }
 }

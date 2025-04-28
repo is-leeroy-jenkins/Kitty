@@ -207,17 +207,6 @@ namespace Kitty
             var _async = new TaskCompletionSource<string>( );
             try
             {
-                var _dialog = new OpenFileDialog
-                {
-                    CheckFileExists = true,
-                    CheckPathExists = true
-                };
-
-                _dialog.ShowDialog( );
-                _async.SetResult( _dialog.FileName );
-                return !string.IsNullOrEmpty( _dialog.FileName )
-                    ? _async.Task
-                    : default( Task<string> );
             }
             catch( Exception ex )
             {
@@ -225,6 +214,8 @@ namespace Kitty
                 Fail( ex );
                 return default( Task<string> );
             }
+
+            return default( Task<string> );
         }
 
         /// <summary>
@@ -238,16 +229,6 @@ namespace Kitty
             var _async = new TaskCompletionSource<object>( );
             try
             {
-                var _dialog = new SaveFileDialog
-                {
-                    CreatePrompt = true,
-                    OverwritePrompt = true,
-                    CheckFileExists = true,
-                    CheckPathExists = true
-                };
-
-                _dialog.ShowDialog( );
-                _stream = File.Create( _dialog.FileName );
                 _stream.Close( );
                 _async.SetResult( _stream );
                 return _async.Task;

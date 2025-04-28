@@ -44,12 +44,9 @@ namespace Kitty
 {
     using System;
     using System.IO;
-    using CefSharp;
     using System.Diagnostics.CodeAnalysis;
     using System.Windows;
     using System.Windows.Input;
-    using System.Windows.Controls;
-    using CefSharp.Wpf.Internals;
 
     /// <summary>
     /// 
@@ -62,66 +59,6 @@ namespace Kitty
     public static class NetUtility
     {
         /// <summary>
-        /// Determines whether the specified tb is focused.
-        /// </summary>
-        /// <param name="textBox">The tb.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified tb is focused; otherwise, <c>false</c>.
-        /// </returns>
-        public static bool IsFocused( TextBox textBox )
-        {
-            return textBox.IsFocused;
-        }
-
-        /// <summary>
-        /// Adds the hot key.
-        /// </summary>
-        /// <param name="form">The form.</param>
-        /// <param name="function">The function.</param>
-        /// <param name="ctrl">if set to <c>true</c> [control].</param>
-        /// <param name="shift">if set to <c>true</c> [shift].</param>
-        /// <param name="alt">if set to <c>true</c> [alt].</param>
-        public static void AddHotKey( Window form, Action function, bool ctrl = false, 
-            bool shift = false, bool alt = false )
-        {
-            form.KeyDown += delegate( object sender, KeyEventArgs e )
-            {
-                if( e.IsHotKey( ctrl, shift, alt ) )
-                {
-                    function( );
-                }
-            };
-        }
-
-        /// <summary>
-        /// Determines whether [is fully selected] [the specified tb].
-        /// </summary>
-        /// <param name="textBox">The tb.</param>
-        /// <returns>
-        /// <c>true</c> if [is fully selected]
-        /// [the specified tb]; otherwise, <c>false</c>.
-        /// </returns>
-        public static bool IsFullySelected( TextBox textBox )
-        {
-            return textBox.SelectionLength == textBox.Text.Length;
-        }
-
-        /// <summary>
-        /// Determines whether the specified tb has selection.
-        /// </summary>
-        /// <param name="textBox">The tb.</param>
-        /// <returns>
-        ///   <c>true</c>
-        /// if the specified tb has selection;
-        /// otherwise,
-        /// <c>false</c>.
-        /// </returns>
-        public static bool HasSelection( TextBox textBox )
-        {
-            return textBox.SelectionLength > 0;
-        }
-
-        /// <summary>
         /// Converts to string.
         /// </summary>
         /// <param name="o">The o.</param>
@@ -129,38 +66,6 @@ namespace Kitty
         public static string ConvertToString( this object o )
         {
             return o as string;
-        }
-
-        /// <summary>
-        /// Determines whether [is hot key] [the specified key].
-        /// </summary>
-        /// <param name="eventData">The <see cref="KeyEventArgs"/>
-        /// instance containing the event data.
-        /// </param>
-        /// <param name="ctrl">if set to <c>true</c> [control].</param>
-        /// <param name="shift">if set to <c>true</c> [shift].</param>
-        /// <param name="alt">if set to <c>true</c> [alt].</param>
-        /// <returns>
-        ///   <c>true</c> if [is hot key] [the specified key];
-        /// otherwise, <c>false</c>.
-        /// </returns>
-        public static bool IsHotKey( this KeyEventArgs eventData, bool ctrl = false,
-            bool shift = false, bool alt = false )
-        {
-            return eventData.IsDown == ctrl && eventData.Handled == shift
-                && eventData.Key == Key.LeftShift == alt;
-        }
-
-        /// <summary>
-        /// Converts to cefstate.
-        /// </summary>
-        /// <param name="value">if set to <c>true</c> [value].</param>
-        /// <returns></returns>
-        public static CefState ToCefState( this bool value )
-        {
-            return value
-                ? CefState.Enabled
-                : CefState.Disabled;
         }
 
         /// <summary>
@@ -192,9 +97,7 @@ namespace Kitty
         /// </param>
         private static void Fail( Exception ex )
         {
-            using var _error = new ErrorWindow( ex );
-            _error?.SetText( );
-            _error?.ShowDialog( );
+            var _error = Console.Error;
         }
     }
 }

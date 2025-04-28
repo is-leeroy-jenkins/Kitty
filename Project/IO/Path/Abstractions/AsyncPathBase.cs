@@ -202,9 +202,7 @@ namespace Kitty
         /// <param name="_ex">The _ex.</param>
         private protected static void Fail( Exception _ex )
         {
-            var _error = new ErrorWindow( _ex );
-            _error?.SetText( );
-            _error?.ShowDialog( );
+            using var _error = Console.Error;
         }
 
         /// <summary>

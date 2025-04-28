@@ -112,17 +112,6 @@ namespace Kitty
         }
 
         /// <summary>
-        /// Fails the specified ex.
-        /// </summary>
-        /// <param name="ex">The ex.</param>
-        private protected void Fail( Exception ex )
-        {
-            var _error = new ErrorWindow( ex );
-            _error?.SetText( );
-            _error?.ShowDialog( );
-        }
-
-        /// <summary>
         /// Initializes a new instance of the
         /// <see cref="EmailCredential"/> class.
         /// </summary>
@@ -230,6 +219,15 @@ namespace Kitty
             {
                 _password = value;
             }
+        }
+
+        /// <summary>
+        /// Fails the specified ex.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
+        private protected void Fail( Exception ex )
+        {
+            using var _error = Console.Error;
         }
     }
 }
