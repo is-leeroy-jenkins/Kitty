@@ -1,3 +1,4 @@
+![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/HaloKittyAdventures.png)
 # Kitty – MVC Starter Kit 🐱⚔️  
 *“Because every **Hello World** deserves Major-grade armor.”*
 
