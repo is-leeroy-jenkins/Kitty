@@ -53,7 +53,7 @@ Inspired by an imaginary crossover where **Hello Kitty** suits up as **Master Ch
 | Docker         | ≥ 24    | (optional) containerised dev         |
 
 
-### Bootstrapping a New App
+### ![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/install.png) Installation
 
 ```bash
 dotnet new install Kitty.Template      # 1st time only
