@@ -23,6 +23,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.3.0" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Enumerations\" />
+    <Folder Include="IO\" />
+    <Folder Include="Abstractions\" />
+    <Folder Include="Static\" />
     <Folder Include="Resources\Images\GIthub\" />
   </ItemGroup>
   <ItemGroup>
