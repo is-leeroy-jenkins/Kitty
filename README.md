@@ -3,8 +3,8 @@
 #  MVC Starter Kit  
 *“Because every **Hello World** deserves Major-grade armor.”*
 
-**Kitty** is a playful, production-minded boilerplate for **ASP.NET Core 8 MVC** web-apps.  
-Inspired by an imaginary crossover where **Hello Kitty** suits up as **Master Chief**, Kitty fuses the cuteness of fast scaffolding with the fire-power of enterprise-grade architecture—so you can obliterate boilerplate and conquer feature work.
+**Kitty** provides production-ready boilerplate for **ASP.NET Core 8 MVC** web-applications.  
+Inspired by a crossover of **Hello Kitty** and Halo's **Master Chief**, Kitty cute and quick scaffolding with the fire-power of enterprise-grade architecture—so you can obliterate boilerplate and conquer the task at hand.
 
 <div align="center">
   <img src="https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/HaloKittyIcon_128px.png" width="100" alt="Kitty – Hello Kitty x Master Chief fan-art">
