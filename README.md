@@ -63,14 +63,14 @@ dotnet watch                    # Live reload incl. Sass & ESBuild
 ```
 
 ### ![](https://github.com/is-leeroy-jenkins/Kitty/blob/master/Project/Resources/Images/Github/csharp.png) Code
-- [Controller](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Controllers) - main UI layer with numerous controls and related functionality.
+- [Controller](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Controller]) - main UI layer with numerous controls and related functionality.
 - [Models](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Models) - XAML-based styles for the Badger UI layer.
-- [Enumerations]() - various enumerations used by Kitty.
-- [Extensions]()- useful extension methods for budget analysis by type.
-- [IO]() - input output classes used for networking and the file systemm.
-- [Static]() - static types used in the analysis of environmental budget data.
-- [Abstractions]() - interfaces and base-classes used in the analysis of environmental budget data.
-- [Views](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Views) - UI layer for Kitty
+- [Enumerations](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Enumerations) - various enumerations used by Kitty.
+- [Extensions](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Extensions)- useful extension methods for budget analysis by type.
+- [IO](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/IO) - input output classes used for networking and the file systemm.
+- [Static](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Static) - static types used in the analysis of environmental budget data.
+- [Abstractions](https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Abstractions) - interfaces and base-classes used in the analysis of environmental budget data.
+- [Views]((https://github.com/is-leeroy-jenkins/Kitty/tree/master/Project/Views)) - UI layer for Kitty
 
 ___
 
