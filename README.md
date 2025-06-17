@@ -14,7 +14,7 @@ Inspired by a crossover of **Hello Kitty** and Halo's **Master Chief**, Kitty cu
 
 ---
 
-## ✨ Features at a Glance
+### ✨ Features at a Glance
 
 | 🗂 Category              | 🎁 What Kitty Ships                                                                              |
 |-------------------------|--------------------------------------------------------------------------------------------------|
@@ -33,7 +33,7 @@ Inspired by a crossover of **Hello Kitty** and Halo's **Master Chief**, Kitty cu
 
 ---
 
-## 🎯 Why Kitty?
+### 🎯 Why Kitty?
 
 * **Opinionated but untethered** – follow conventions out-of-box, yet every dependency is swappable.  
 * **MVC-first** – built for server-rendered apps that still need sprinkles of JS for snappy UX.  
@@ -42,9 +42,9 @@ Inspired by a crossover of **Hello Kitty** and Halo's **Master Chief**, Kitty cu
 
 ---
 
-## 🚀 Quick Start
+### 🚀 Quick Start
 
-### Prerequisites
+#### Prerequisites
 
 | Tool           | Version | Notes                                |
 |----------------|---------|--------------------------------------|
