@@ -127,3 +127,9 @@ ___
 - Sign your commits (git commit -s).
 
 ___
+
+
+## 📝 License
+
+Halo-Kitty is published under the [MIT General Public License v3](https://github.com/is-leeroy-jenkins/Kitty/blob/main/LICENSE).
+
