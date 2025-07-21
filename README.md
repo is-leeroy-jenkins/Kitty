@@ -126,7 +126,6 @@ ___
 - Follow .editorconfig (StyleCop-analyzers enabled).
 - Sign your commits (git commit -s).
 
-___
 
 
 ## 📝 License
